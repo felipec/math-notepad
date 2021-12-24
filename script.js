@@ -17,7 +17,13 @@ function doMath(input) {
 
   for (const line of input.split('\n')) {
     let output = '';
-    if (line) output = math.evaluate(line, scope);
+    if (line) {
+      try {
+        output = math.evaluate(line, scope);
+      } catch(e) {
+        output = e;
+      }
+    }
     results.insert(output.toString() + '\n');
   }
 }
