@@ -11,7 +11,8 @@ var results = ace.edit(output, {
 });
 
 function doMath(input) {
-  console.debug('do math');
+  const output = math.evaluate(input.split('\n'));
+  results.setValue(output.join('\n'));
 }
 
 var timer;
