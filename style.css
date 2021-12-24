@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+#input {
+  flex: 2;
+}
+
+#output {
+  flex: 1;
+}
