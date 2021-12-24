@@ -2,6 +2,7 @@ const wait = 100;
 
 var editor = ace.edit(input, {
   theme: 'ace/theme/monokai',
+  mode: 'ace/mode/python',
   printMargin: false,
 });
 
