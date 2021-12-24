@@ -5,4 +5,5 @@ var editor = ace.edit(input, {
 
 var results = ace.edit(output, {
   printMargin: false,
+  readOnly: true,
 });
