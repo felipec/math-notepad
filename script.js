@@ -26,6 +26,10 @@ function doMath(input) {
     }
     results.insert(output.toString() + '\n');
   }
+
+  /* Remove extra newline */
+  results.setValue(results.getValue().slice(0, -1));
+  results.clearSelection();
 }
 
 var timer;
