@@ -11,7 +11,13 @@ var results = ace.edit(output, {
 });
 
 function doMath(input) {
-  const output = math.evaluate(input.split('\n'));
+  let output = [];
+  let scope = {};
+
+  for (const line of input.split('\n')) {
+    output.push(math.evaluate(line, scope));
+  }
+
   results.setValue(output.join('\n'));
 }
 
