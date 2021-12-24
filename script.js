@@ -11,14 +11,15 @@ var results = ace.edit(output, {
 });
 
 function doMath(input) {
-  let output = [];
+  results.setValue('');
+
   let scope = {};
 
   for (const line of input.split('\n')) {
-    output.push(math.evaluate(line, scope));
+    let output = '';
+    if (line) output = math.evaluate(line, scope);
+    results.insert(output.toString() + '\n');
   }
-
-  results.setValue(output.join('\n'));
 }
 
 var timer;
