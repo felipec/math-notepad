@@ -1,0 +1,26 @@
+.hljs {
+  color: hsl(240, 6.25%, 87.5%);
+  background-color: hsl(240, 6.25%, 9.375%);
+}
+
+.hljs::selection,
+.hljs ::selection {
+  background-color: hsl(270, 75%, 75%);
+  color: hsl(240, 6.25%, 9.375%);
+}
+
+.hljs-comment {
+  color: hsl(240, 6.25%, 56.25%);
+}
+
+.hljs-number {
+  color: hsl(0, 75%, 75%);
+}
+
+.hljs-operator {
+  color: hsl(30, 75%, 75%);
+}
+
+.hljs-matrix {
+  color: hsl(210, 75%, 75%);
+}
