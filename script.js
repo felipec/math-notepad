@@ -1,16 +1,5 @@
 const wait = 100;
 
-var editor = ace.edit(input, {
-  theme: 'ace/theme/monokai',
-  mode: 'ace/mode/python',
-  printMargin: false,
-});
-
-var results = ace.edit(output, {
-  printMargin: false,
-  readOnly: true,
-});
-
 function doMath(input) {
   let output = [];
   let scope = {};
@@ -27,17 +16,14 @@ function doMath(input) {
     output.push(output_line.toString());
   }
 
-  results.setValue(output.join('\n'));
-  results.clearSelection();
+  results.updateCode(output.join('\n'));
 }
 
 var timer;
 
-function onChange(change) {
+editor.onUpdate(code => {
   clearTimeout(timer);
-  timer = setTimeout(doMath, wait, editor.getValue());
-}
+  timer = setTimeout(doMath, wait, code);
+});
 
-editor.on('change', onChange);
-
-doMath(editor.getValue());
+doMath(editor.toString());
