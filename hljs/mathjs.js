@@ -47,6 +47,11 @@ function mathjs(hljs) {
     begin: '\\b' + either(FUNCTION_LIST) + '\\b',
   };
 
+  const VARIABLE = {
+    scope: 'variable',
+    begin: /[a-zA-Z_$][a-zA-Z0-9_$]*/,
+  };
+
   return {
     name: 'mathjs',
     contains: [
@@ -58,6 +63,7 @@ function mathjs(hljs) {
       UNITS,
       MATRIX,
       FUNCTIONS,
+      VARIABLE,
     ],
   };
 }

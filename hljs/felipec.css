@@ -33,3 +33,7 @@
 .hljs-function {
   color: hsl(240, 75%, 75%);
 }
+
+.hljs-variable {
+  color: hsl(300, 75%, 75%);
+}
