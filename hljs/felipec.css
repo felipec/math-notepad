@@ -21,6 +21,11 @@
   color: hsl(30, 75%, 75%);
 }
 
+.hljs-unit {
+  color: hsl(150, 75%, 75%);
+  font-weight: bold;
+}
+
 .hljs-matrix {
   color: hsl(210, 75%, 75%);
 }

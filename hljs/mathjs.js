@@ -22,6 +22,19 @@ function mathjs(hljs) {
     begin: keywords('true false'),
   };
 
+  const UNIT_LIST = Object.keys(math.Unit.UNITS).sort((a, b) => b.length - a.length);
+
+  const PREFIXED_UNIT_LIST = UNIT_LIST.map(e => {
+      const prefixes = Object.keys(math.Unit.UNITS[e].prefixes).filter(e => e);
+      const prefix_re = prefixes.length ? either(prefixes) + '?' : '';
+      return prefix_re + e;
+  });
+
+  const UNITS = {
+    scope: 'unit',
+    begin: either(PREFIXED_UNIT_LIST),
+  };
+
   const MATRIX = {
     scope: 'matrix',
     begin: /[\[\],;]/,
@@ -35,6 +48,7 @@ function mathjs(hljs) {
       NUMBER_KEYWORDS,
       OPERATORS,
       OPERATOR_KEYWORDS,
+      UNITS,
       MATRIX,
     ],
   };
