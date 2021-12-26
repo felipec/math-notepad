@@ -5,17 +5,20 @@
 <head>
   <meta charset="utf-8">
   <title>Notepad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-  <div id="input" class="editor"></div>
+  <div id="input" class="editor language-python"></div>
   <div id="output" class="editor"></div>
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/languages/python.min.js"></script>
 <script type="module">
   import { CodeJar } from 'https://medv.io/codejar/codejar.js';
-  window.editor = CodeJar(input, e => {});
+  window.editor = CodeJar(input, hljs.highlightElement);
   window.results = CodeJar(output, e => {});
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.1/math.min.js"></script>
