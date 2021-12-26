@@ -13,8 +13,10 @@ body {
 
 #input {
   flex: 2;
+  background-color: hsl(240, 6.25%, 9.375%);
 }
 
 #output {
   flex: 1;
+  background-color: hsl(240, 6.25%, 12.5%);
 }
