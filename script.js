@@ -7,10 +7,14 @@ function doMath(input) {
   for (const line of input.split('\n')) {
     let output_line = '';
     if (line) {
-      try {
-        output_line = math.evaluate(line, scope);
-      } catch(e) {
-        output_line = e;
+      if (line.startsWith('#')) {
+        output_line = line;
+      } else {
+        try {
+          output_line = math.evaluate(line, scope);
+        } catch(e) {
+          output_line = e;
+        }
       }
     }
     output.push(output_line.toString());
