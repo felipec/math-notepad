@@ -12,8 +12,7 @@ var results = ace.edit(output, {
 });
 
 function doMath(input) {
-  results.setValue('');
-
+  let output = [];
   let scope = {};
 
   for (const line of input.split('\n')) {
@@ -25,11 +24,10 @@ function doMath(input) {
         output_line = e;
       }
     }
-    results.insert(output_line.toString() + '\n');
+    output.push(output_line.toString());
   }
 
-  /* Remove extra newline */
-  results.setValue(results.getValue().slice(0, -1));
+  results.setValue(output.join('\n'));
   results.clearSelection();
 }
 
