@@ -29,3 +29,7 @@
 .hljs-matrix {
   color: hsl(210, 75%, 75%);
 }
+
+.hljs-function {
+  color: hsl(240, 75%, 75%);
+}

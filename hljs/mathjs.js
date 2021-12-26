@@ -40,6 +40,13 @@ function mathjs(hljs) {
     begin: /[\[\],;]/,
   };
 
+  const FUNCTION_LIST = Object.getOwnPropertyNames(math).filter(e => typeof math[e] === 'function');
+
+  const FUNCTIONS = {
+    scope: 'function',
+    begin: '\\b' + either(FUNCTION_LIST) + '\\b',
+  };
+
   return {
     name: 'mathjs',
     contains: [
@@ -50,6 +57,7 @@ function mathjs(hljs) {
       OPERATOR_KEYWORDS,
       UNITS,
       MATRIX,
+      FUNCTIONS,
     ],
   };
 }
