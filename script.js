@@ -17,15 +17,15 @@ function doMath(input) {
   let scope = {};
 
   for (const line of input.split('\n')) {
-    let output = '';
+    let output_line = '';
     if (line) {
       try {
-        output = math.evaluate(line, scope);
+        output_line = math.evaluate(line, scope);
       } catch(e) {
-        output = e;
+        output_line = e;
       }
     }
-    results.insert(output.toString() + '\n');
+    results.insert(output_line.toString() + '\n');
   }
 
   /* Remove extra newline */
