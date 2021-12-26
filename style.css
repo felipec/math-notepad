@@ -4,6 +4,13 @@ body {
   margin: 0;
 }
 
+.editor {
+  font-family: monospace;
+  padding: 8px;
+  line-height: 16px;
+  resize: none !important;
+}
+
 #input {
   flex: 2;
 }
