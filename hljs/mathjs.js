@@ -4,7 +4,7 @@ function mathjs(hljs) {
   }
 
   function keywords(args) {
-    return '\\b' + either(args.split(' ')) + '\\b';
+    return '\\b' + either(args) + '\\b';
   }
 
   const OPERATORS = {
@@ -14,12 +14,12 @@ function mathjs(hljs) {
 
   const OPERATOR_KEYWORDS = {
     scope: 'operator',
-    begin: keywords('to in and not or xor mod'),
+    begin: keywords(['to', 'in', 'and', 'not', 'or', 'xor', 'mod']),
   };
 
   const NUMBER_KEYWORDS = {
     scope: 'number',
-    begin: keywords('true false end'),
+    begin: keywords(['true', 'false', 'end']),
   };
 
   const UNIT_LIST = Object.keys(math.Unit.UNITS).sort((a, b) => b.length - a.length);
@@ -32,7 +32,7 @@ function mathjs(hljs) {
 
   const UNITS = {
     scope: 'unit',
-    begin: '\\b' + either(PREFIXED_UNIT_LIST) + '\\b',
+    begin: keywords(PREFIXED_UNIT_LIST),
   };
 
   const MATRIX = {
@@ -44,7 +44,7 @@ function mathjs(hljs) {
 
   const FUNCTIONS = {
     scope: 'function',
-    begin: '\\b' + either(FUNCTION_LIST) + '\\b',
+    begin: keywords(FUNCTION_LIST),
   };
 
   const VARIABLE = {
