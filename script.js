@@ -1,45 +1,30 @@
 const wait = 100;
 
-var editor = ace.edit(input, {
-  theme: 'ace/theme/monokai',
-  mode: 'ace/mode/python',
-  printMargin: false,
-});
-
-var results = ace.edit(output, {
-  printMargin: false,
-  readOnly: true,
-});
-
 function doMath(input) {
-  results.setValue('');
-
+  let output = [];
   let scope = {};
 
   for (const line of input.split('\n')) {
-    let output = '';
+    let output_line = '';
     if (line) {
       try {
-        output = math.evaluate(line, scope);
+        output_line = math.evaluate(line, scope);
       } catch(e) {
-        output = e;
+        output_line = e;
       }
     }
-    results.insert(output.toString() + '\n');
+    output.push(output_line.toString());
   }
 
-  /* Remove extra newline */
-  results.setValue(results.getValue().slice(0, -1));
-  results.clearSelection();
+  results.updateCode(output.join('\n'));
 }
 
 var timer;
 
-function onChange(change) {
+editor.onUpdate(code => {
   clearTimeout(timer);
-  timer = setTimeout(doMath, wait, editor.getValue());
-}
+  timer = setTimeout(doMath, wait, code);
+});
 
-editor.on('change', onChange);
-
-doMath(editor.getValue());
+hljs.configure({ ignoreUnescapedHTML: true });
+doMath(editor.toString());
