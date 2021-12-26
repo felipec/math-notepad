@@ -26,4 +26,5 @@ editor.onUpdate(code => {
   timer = setTimeout(doMath, wait, code);
 });
 
+hljs.configure({ ignoreUnescapedHTML: true });
 doMath(editor.toString());
