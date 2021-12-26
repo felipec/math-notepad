@@ -19,7 +19,7 @@ function mathjs(hljs) {
 
   const NUMBER_KEYWORDS = {
     scope: 'number',
-    begin: keywords('true false'),
+    begin: keywords('true false end'),
   };
 
   const UNIT_LIST = Object.keys(math.Unit.UNITS).sort((a, b) => b.length - a.length);
