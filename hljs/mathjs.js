@@ -32,7 +32,7 @@ function mathjs(hljs) {
 
   const UNITS = {
     scope: 'unit',
-    begin: either(PREFIXED_UNIT_LIST),
+    begin: '\\b' + either(PREFIXED_UNIT_LIST) + '\\b',
   };
 
   const MATRIX = {
