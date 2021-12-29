@@ -6,15 +6,17 @@ function doMath(input) {
     let output = [];
     const inputs = input.split('\n');
     parser.clear();
-    inputs.forEach((input, I) => {
+    inputs.forEach((input, inputIndex) => {
       try {
         output_line = parser.evaluate(input);
       }
       catch (e) {
         output_line = e;
       }
+      // Checks for unwanted outputs like [], function() ..., null, etc.
       if (output_line && output_line.toString() != "[]" && typeof (output_line) != "function" && output_line.toString() != "[object Object]") {
-        output.push((I + 1) + ":" + output_line.toString().split("\n").map(l => "\t" + l).join("\n"))
+        // Formats the output to show from which line it comes from and accounts for multiple line outputs
+        output.push((inputIndex + 1) + ":" + parser.format(output_line,14).split("\n").map(l => "\t" + l).join("\n"))
       }
     })
     results.updateCode(output.join("\n"))
