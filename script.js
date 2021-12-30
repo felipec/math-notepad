@@ -16,7 +16,7 @@ function doMath(input) {
       // Checks for unwanted outputs like [], function() ..., null, etc.
       if (output_line && output_line.toString() != "[]" && typeof (output_line) != "function" && output_line.toString() != "[object Object]") {
         // Formats the output to show from which line it comes from and accounts for multiple line outputs
-        output.push((inputIndex + 1) + ":" + parser.format(output_line,14).split("\n").map(l => "\t" + l).join("\n"))
+        output.push((inputIndex + 1) + ":" + math.format(output_line,14).split("\n").map(l => "\t" + l).join("\n"))
       }
     })
     results.updateCode(output.join("\n"))
