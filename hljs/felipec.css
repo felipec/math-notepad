@@ -17,20 +17,20 @@
   color: hsl(0, 75%, 75%);
 }
 
-.hljs-operator {
+.hljs-punctuation {
   color: hsl(30, 75%, 75%);
 }
 
-.hljs-unit {
+.hljs-class {
   color: hsl(150, 75%, 75%);
   font-weight: bold;
 }
 
-.hljs-matrix {
+.hljs-bullet {
   color: hsl(210, 75%, 75%);
 }
 
-.hljs-function {
+.hljs-title {
   color: hsl(240, 75%, 75%);
 }
 

@@ -8,12 +8,12 @@ function mathjs(hljs) {
   }
 
   const OPERATORS = {
-    scope: 'operator',
+    scope: 'punctuation',
     begin: /[=+\-*/.^?!%'<>:~]+/,
   };
 
   const OPERATOR_KEYWORDS = {
-    scope: 'operator',
+    scope: 'punctuation',
     begin: keywords(['to', 'in', 'and', 'not', 'or', 'xor', 'mod']),
   };
 
@@ -31,19 +31,19 @@ function mathjs(hljs) {
   });
 
   const UNITS = {
-    scope: 'unit',
+    scope: 'class',
     begin: keywords(PREFIXED_UNIT_LIST),
   };
 
   const MATRIX = {
-    scope: 'matrix',
+    scope: 'bullet',
     begin: /[\[\],;]/,
   };
 
   const FUNCTION_LIST = Object.getOwnPropertyNames(math).filter(e => typeof math[e] === 'function');
 
   const FUNCTIONS = {
-    scope: 'function',
+    scope: 'title',
     begin: keywords(FUNCTION_LIST),
   };
 
