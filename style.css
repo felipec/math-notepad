@@ -20,3 +20,7 @@ body {
   flex: 1;
   background-color: hsl(240, 6.25%, 12.5%);
 }
+
+.hljs-class {
+  font-weight: bold;
+}
