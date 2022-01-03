@@ -11,7 +11,7 @@ function doMath(input) {
         output_line = line;
       } else {
         try {
-          output_line = math.evaluate(line, scope);
+          output_line = math.format(math.evaluate(line, scope), 14);
         } catch(e) {
           output_line = e;
         }
