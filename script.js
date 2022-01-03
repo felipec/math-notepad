@@ -13,11 +13,11 @@ function doMath(input) {
         try {
           output_line = math.format(math.evaluate(line, scope), 14);
         } catch(e) {
-          output_line = e;
+          output_line = e.toString();
         }
       }
     }
-    output.push(output_line.toString());
+    output.push(output_line);
   }
 
   results.updateCode(output.join('\n'));
