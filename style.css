@@ -23,6 +23,7 @@ body {
 
 #help {
   font-family: sans-serif;
+  background-color: hsl(240, 6.25%, 93.75%);
   flex: 1;
   padding: 8px;
 }
@@ -34,6 +35,10 @@ h1, h2 {
 
 h1 {
   font-size: 1.4em;
+}
+
+code {
+  border-radius: 4px;
 }
 
 .hljs-class {
