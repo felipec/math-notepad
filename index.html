@@ -3,16 +3,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Notepad</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/felipec.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Notepad</title>
+    <link rel="stylesheet" href="css/highlight.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div id="input" class="editor language-mathjs"></div>
-  <div id="output" class="editor language-mathjs"></div>
-  <div id="help" style="display: none">
+<div id="input" class="editor language-mathjs"></div>
+<div id="output" class="editor language-mathjs"></div>
+<div id="help" style="display: none">
     <h1 id="help_name"></h1>
     <p id="help_description"></p>
     <h2>Syntax</h2>
@@ -21,18 +21,18 @@
     <pre><code id="help_examples" class="language-mathjs"></code></pre>
     <h2>See also</h2>
     <p id="help_seealso"></p>
-  </div>
+</div>
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script src="js/highlight.min.js"></script>
 <script type="module">
-  import { CodeJar } from 'https://medv.io/codejar/codejar.js';
-  window.editor = CodeJar(input, hljs.highlightElement);
-  window.results = CodeJar(output, hljs.highlightElement);
+    import {CodeJar} from './js/codejar.js';
+
+    window.editor = CodeJar(input, hljs.highlightElement);
+    window.results = CodeJar(output, hljs.highlightElement);
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.1/math.min.js"></script>
+<script src="js/math.min.js"></script>
 <script src="hljs/mathjs.js"></script>
 
 <script src="script.js" defer></script>
-
 </html>
