@@ -30,6 +30,9 @@
 
     window.editor = CodeJar(input, hljs.highlightElement);
     window.results = CodeJar(output, hljs.highlightElement);
+
+    // focus on window when opens
+    document.querySelector('#input').focus();
 </script>
 <script src="js/math.min.js"></script>
 <script src="hljs/mathjs.js"></script>
