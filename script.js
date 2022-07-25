@@ -1,5 +1,7 @@
 const wait = 100;
 
+const intro = '# Type math.js expressions here, like 2 + 2, det([1, 2; 3, 4]), 3600 J to Wh, or help("det")';
+
 function showDoc(doc) {
   if (!doc) {
     help.style.display = 'none';
@@ -49,6 +51,8 @@ editor.onUpdate(code => {
   clearTimeout(timer);
   timer = setTimeout(doMath, wait, code);
 });
+
+editor.updateCode(intro);
 
 hljs.configure({ ignoreUnescapedHTML: true });
 doMath(editor.toString());
