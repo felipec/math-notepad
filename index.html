@@ -1,28 +1,22 @@
 <!doctype html>
 
-<html lang="en">
+<meta charset="utf-8">
+<title>Notepad</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6/build/styles/felipec.min.css">
+<link rel="stylesheet" href="style.css">
 
-<head>
-  <meta charset="utf-8">
-  <title>Notepad</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6/build/styles/felipec.min.css">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <div id="input" class="editor language-mathjs"></div>
-  <div id="output" class="editor language-mathjs"></div>
-  <div id="help" style="display: none">
-    <h1 id="help_name"></h1>
-    <p id="help_description"></p>
-    <h2>Syntax</h2>
-    <pre><code id="help_syntax" class="language-mathjs"></code></pre>
-    <h2>Examples</h2>
-    <pre><code id="help_examples" class="language-mathjs"></code></pre>
-    <h2>See also</h2>
-    <p id="help_seealso"></p>
-  </div>
-</body>
+<div id="input" class="editor language-mathjs"></div>
+<div id="output" class="editor language-mathjs"></div>
+<div id="help" style="display: none">
+  <h1 id="help_name"></h1>
+  <p id="help_description"></p>
+  <h2>Syntax</h2>
+  <pre><code id="help_syntax" class="language-mathjs"></code></pre>
+  <h2>Examples</h2>
+  <pre><code id="help_examples" class="language-mathjs"></code></pre>
+  <h2>See also</h2>
+  <p id="help_seealso"></p>
+</div>
 
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6/build/highlight.min.js"></script>
 <script type="module">
@@ -34,5 +28,3 @@
 <script src="hljs/mathjs.js"></script>
 
 <script src="script.js" defer></script>
-
-</html>
