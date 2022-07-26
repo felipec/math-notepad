@@ -1,0 +1,13 @@
+{
+  "name": "math-notepad",
+  "version": "1.0.0",
+  "description": "Very simple math.js editor",
+  "main": "main.js",
+  "author": "Felipe Contreras",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^19.0.9"
+  }
+}
