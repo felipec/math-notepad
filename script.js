@@ -45,6 +45,13 @@ function doMath(input) {
   showDoc(doc);
 }
 
+function dropHandler(ev) {
+  ev.preventDefault();
+
+  const file = ev.dataTransfer.items[0].getAsFile();
+  file.text().then(e => editor.updateCode(e));
+}
+
 var timer;
 
 editor.onUpdate(code => {
