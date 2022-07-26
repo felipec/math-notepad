@@ -27,7 +27,7 @@ function doMath(input) {
     let output_line = '';
     if (line) {
       if (line.startsWith('#')) {
-        output_line = line;
+        output_line = '#';
       } else {
         try {
           const r = math.evaluate(line, scope);
