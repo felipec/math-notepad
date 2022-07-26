@@ -1,6 +1,6 @@
 const wait = 100;
 
-const intro = '# Type math.js expressions here, like 2 + 2, det([1, 2; 3, 4]), 3600 J to Wh, or help("det")';
+const intro = '# Type math.js expressions here, like 2 + 2, det([1, 2; 3, 4]), 3600 J to Wh, or help("det")\n\n\n';
 
 function showDoc(doc) {
   if (!doc) {
