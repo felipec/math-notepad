@@ -1,0 +1,30 @@
+# Functions and constants
+
+round(e, 3)
+atan2(3, -3) / pi
+log(10000, 10)
+sqrt(-4)
+derivative("x^2 + x", "x")
+pow([[-1, 2], [3, 1]], 2)
+
+# Expressions
+
+1.2 / (3.3 + 1.7)
+
+a = 5.08 cm + 2 inch
+a to inch
+
+sin(90 deg)
+
+9 / 3 + 2i
+
+det([-1, 2; 3, 1])
+
+f(x, y) = x ^ y
+f(2, 3)
+
+1 kg * 1 m / s^2
+
+# Extra features
+
+help('round')
