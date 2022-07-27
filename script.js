@@ -10,11 +10,11 @@ function showDoc(doc) {
 
   help_name.textContent = doc.name;
   help_description.textContent = doc.description;
-  help_syntax.textContent = doc.syntax?.join("\n");
-  hljs.highlightElement(help_syntax);
-  help_examples.textContent = doc.examples?.join("\n");
-  hljs.highlightElement(help_examples);
-  help_seealso.textContent = doc.seealso?.join(", ");
+  help_syntax_code.textContent = doc.syntax?.join("\n");
+  hljs.highlightElement(help_syntax_code);
+  help_examples_code.textContent = doc.examples?.join("\n");
+  hljs.highlightElement(help_examples_code);
+  help_seealso_text.textContent = doc.seealso?.join(", ");
   help.style.display = 'block';
 }
 
