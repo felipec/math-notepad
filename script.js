@@ -54,6 +54,13 @@ function dropHandler(ev) {
   file.text().then(e => editor.updateCode(e));
 }
 
+async function start(url) {
+  let code = intro;
+  if (url) code = await (await fetch(url)).text();
+  editor.updateCode(code);
+  doMath(code);
+}
+
 var timer;
 
 editor.onUpdate(code => {
@@ -61,7 +68,7 @@ editor.onUpdate(code => {
   timer = setTimeout(doMath, wait, code);
 });
 
-editor.updateCode(intro);
-
 hljs.configure({ ignoreUnescapedHTML: true });
-doMath(editor.toString());
+
+const params = new URLSearchParams(window.location.search);
+start(params.get('input'));
