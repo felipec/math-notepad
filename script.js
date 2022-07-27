@@ -22,13 +22,24 @@ function showDoc(doc) {
     return;
   }
 
+  function hideEmpty(elem, value) {
+    elem.style.display = value ? 'block' : 'none';
+  }
+
   help_name.textContent = doc.name;
   help_description.textContent = doc.description;
+
   help_syntax_code.textContent = doc.syntax?.join("\n");
   hljs.highlightElement(help_syntax_code);
+  hideEmpty(help_syntax, doc.syntax);
+
   help_examples_code.textContent = doc.examples?.join("\n");
   hljs.highlightElement(help_examples_code);
+  hideEmpty(help_examples, doc.examples);
+
   help_seealso_text.textContent = doc.seealso?.join(", ");
+  hideEmpty(help_seealso, doc.seealso);
+
   help.style.display = 'block';
 }
 
