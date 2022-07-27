@@ -1,6 +1,20 @@
 const wait = 100;
 
-const intro = '# Type math.js expressions here, like 2 + 2, det([1, 2; 3, 4]), 3600 J to Wh, or help("det")\n\n\n';
+const intro = '# intro';
+
+const intro_doc = {
+  description: 'You can type math.js expressions and see the result.',
+  examples: [
+    '2 + 2',
+    'round(e, 3)',
+    'log(100000, 10)',
+    '10cm to inch',
+    'sin(90 deg)',
+    'det([-1, 2; 3, 1])',
+    '1 kg * 1 m / s^2',
+    'help("round")',
+  ]
+}
 
 function showDoc(doc) {
   if (!doc) {
@@ -27,6 +41,7 @@ function doMath(input) {
     let output_line = '';
     if (line) {
       if (line.startsWith('#')) {
+        if (line == '# intro') doc = intro_doc;
         output_line = '#';
       } else {
         try {
