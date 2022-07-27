@@ -10,11 +10,11 @@ function showDoc(doc) {
 
   help_name.textContent = doc.name;
   help_description.textContent = doc.description;
-  help_syntax.textContent = doc.syntax.join("\n");
+  help_syntax.textContent = doc.syntax?.join("\n");
   hljs.highlightElement(help_syntax);
-  help_examples.textContent = doc.examples.join("\n");
+  help_examples.textContent = doc.examples?.join("\n");
   hljs.highlightElement(help_examples);
-  help_seealso.textContent = doc.seealso.join(", ");
+  help_seealso.textContent = doc.seealso?.join(", ");
   help.style.display = 'block';
 }
 
