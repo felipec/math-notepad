@@ -58,7 +58,7 @@ async function start(url) {
   let code = intro;
   if (url) code = await (await fetch(url)).text();
   editor.updateCode(code);
-  doMath(code);
+  doMath(editor.toString());
 }
 
 var timer;
